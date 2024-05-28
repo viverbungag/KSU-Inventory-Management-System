@@ -17,6 +17,9 @@ h4{
 h5{
   @apply text-white text-xl font-bold
 }
+p{
+  @apply text-white
+}
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
