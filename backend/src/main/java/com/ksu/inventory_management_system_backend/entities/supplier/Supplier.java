@@ -1,6 +1,7 @@
 package com.ksu.inventory_management_system_backend.entities.supplier;
 
 import com.ksu.inventory_management_system_backend.entities.product.Product;
+import com.ksu.inventory_management_system_backend.entities.supplier.Dto.CreateSupplierDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,7 +33,7 @@ public class Supplier {
     @NonNull
     private String address;
 
-    @OneToMany(mappedBy = "supplier")
+    @OneToMany(mappedBy = "supplier", fetch = FetchType.LAZY)
     @Setter
     private Collection<Product> products;
 

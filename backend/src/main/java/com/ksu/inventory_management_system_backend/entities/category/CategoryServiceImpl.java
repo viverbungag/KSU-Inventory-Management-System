@@ -1,5 +1,6 @@
 package com.ksu.inventory_management_system_backend.entities.category;
 
+import com.ksu.inventory_management_system_backend.entities.category.Dto.CreateCategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,5 +1,7 @@
 package com.ksu.inventory_management_system_backend.entities.category;
 
+import com.ksu.inventory_management_system_backend.entities.category.Dto.CreateCategoryDto;
+
 interface CategoryService {
 
     void createCategory(CreateCategoryDto createCategoryDto);
