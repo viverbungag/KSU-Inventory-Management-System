@@ -1,4 +1,4 @@
-package com.ksu.inventory_management_system_backend.category;
+package com.ksu.inventory_management_system_backend.entities.category;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,13 +10,13 @@ public class CategoryServiceImpl implements CategoryService {
         private final JpaCategoryRepository jpaCategoryRepository;
 
         @Override
-        public void createCategory(Category category) {
-            jpaCategoryRepository.save(category);
+        public void createCategory(CreateCategoryDto createCategoryDto) {
+            jpaCategoryRepository.save(Category.from(createCategoryDto));
         }
 
         @Override
-        public void updateCategory(Category category) {
-            jpaCategoryRepository.save(category);
+        public void updateCategory(CreateCategoryDto createCategoryDto) {
+            jpaCategoryRepository.save(Category.from(createCategoryDto));
         }
 
         @Override
