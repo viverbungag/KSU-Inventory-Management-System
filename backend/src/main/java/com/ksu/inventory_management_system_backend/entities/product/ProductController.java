@@ -1,7 +1,7 @@
 package com.ksu.inventory_management_system_backend.entities.product;
 
-import com.ksu.inventory_management_system_backend.entities.product.Dto.CreateProductDto;
-import com.ksu.inventory_management_system_backend.entities.product.Dto.ProductReturnDto;
+import com.ksu.inventory_management_system_backend.entities.product.dto.CreateProductDto;
+import com.ksu.inventory_management_system_backend.entities.product.dto.ProductReturnDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

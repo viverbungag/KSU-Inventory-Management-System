@@ -1,5 +1,6 @@
 package com.ksu.inventory_management_system_backend.entities.unit;
 
+import com.ksu.inventory_management_system_backend.entities.unit.dto.CreateUnitDto;
 import jakarta.persistence.*;
 import lombok.*;
 

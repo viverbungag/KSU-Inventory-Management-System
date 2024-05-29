@@ -1,7 +1,7 @@
 package com.ksu.inventory_management_system_backend.entities.supplier;
 
 
-import com.ksu.inventory_management_system_backend.entities.supplier.Dto.CreateSupplierDto;
+import com.ksu.inventory_management_system_backend.entities.supplier.dto.CreateSupplierDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

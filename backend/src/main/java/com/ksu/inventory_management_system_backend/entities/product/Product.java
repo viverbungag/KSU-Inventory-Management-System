@@ -1,8 +1,8 @@
 package com.ksu.inventory_management_system_backend.entities.product;
 
-import com.ksu.inventory_management_system_backend.entities.product.Dto.CreateProductDto;
-import com.ksu.inventory_management_system_backend.entities.product.Dto.ProductReturnDto;
-import com.ksu.inventory_management_system_backend.entities.product.Dto.ProductReturnDtoTempSupplier;
+import com.ksu.inventory_management_system_backend.entities.product.dto.CreateProductDto;
+import com.ksu.inventory_management_system_backend.entities.product.dto.ProductReturnDto;
+import com.ksu.inventory_management_system_backend.entities.product.dto.ProductReturnDtoTempSupplier;
 import com.ksu.inventory_management_system_backend.entities.supplier.Supplier;
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,6 +1,6 @@
 package com.ksu.inventory_management_system_backend.entities.supplier;
 
-import com.ksu.inventory_management_system_backend.entities.supplier.Dto.CreateSupplierDto;
+import com.ksu.inventory_management_system_backend.entities.supplier.dto.CreateSupplierDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
