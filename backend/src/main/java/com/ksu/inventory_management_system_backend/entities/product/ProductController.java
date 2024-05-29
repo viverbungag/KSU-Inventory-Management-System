@@ -15,34 +15,40 @@ public class ProductController {
 
         private final ProductService productService;
 
-         @PostMapping
-         @ResponseStatus(HttpStatus.CREATED)
-         public void createProduct(@RequestBody CreateProductDto createProductDto) {
-             productService.createProduct(createProductDto);
-         }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProduct(@RequestBody CreateProductDto createProductDto) {
+        productService.createProduct(createProductDto);
+    }
 
-         @GetMapping
-         @ResponseStatus(HttpStatus.OK)
-         public Collection<ProductReturnDto> getProducts() {
-             return productService.getAllProducts();
-         }
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Collection<ProductReturnDto> getProducts() {
+        return productService.getAllProducts();
+    }
 
-         @GetMapping("/{id}")
-         @ResponseStatus(HttpStatus.OK)
-         public ProductReturnDto getProduct(@PathVariable long id) {
-             return productService.getProduct(id);
-         }
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductReturnDto getProduct(@PathVariable long id) {
+        return productService.getProduct(id);
+    }
 
-         @PutMapping("/{id}")
-         @ResponseStatus(HttpStatus.OK)
-         public void updateProduct(@PathVariable long id, @RequestBody CreateProductDto createProductDto) {
-             productService.updateProduct(id, createProductDto);
-         }
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateProduct(@PathVariable long id, @RequestBody CreateProductDto createProductDto) {
+        productService.updateProduct(id, createProductDto);
+    }
 
-         @DeleteMapping("/{id}")
-         @ResponseStatus(HttpStatus.NO_CONTENT)
-         public void deleteProduct(@PathVariable long id) {
-             productService.deleteProduct(id);
-         }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteProduct(@PathVariable long id) {
+        productService.deleteProduct(id);
+    }
+
+    @GetMapping("/name/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public ProductReturnDto getProductByName(@PathVariable String name) {
+        return productService.getProductByName(name);
+    }
 
 }

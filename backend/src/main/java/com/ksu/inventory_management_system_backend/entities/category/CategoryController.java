@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class CategoryController {
 
     private final CategoryService categoryService;
-    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -23,7 +22,7 @@ public class CategoryController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void updateCategory(@PathVariable Long id, @RequestBody CreateCategoryDto category) {
-        categoryService.updateCategory(category);
+        categoryService.updateCategory(id, category);
     }
 
     @GetMapping("/{id}")
@@ -41,6 +40,6 @@ public class CategoryController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public Iterable<Category> getCategories() {
-        return categoryService.getCategories();
+        return categoryService.getAllCategories();
     }
 }

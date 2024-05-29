@@ -16,14 +16,14 @@ public class SupplierController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Supplier createSupplier(@RequestBody CreateSupplierDto createSupplierDto) {
-        return supplierService.createSupplier(createSupplierDto);
+    public void createSupplier(@RequestBody CreateSupplierDto createSupplierDto) {
+        supplierService.createSupplier(createSupplierDto);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Supplier updateSupplier(@PathVariable long id, @RequestBody CreateSupplierDto createSupplierDto) {
-        return supplierService.updateSupplier(id, createSupplierDto);
+    public void updateSupplier(@PathVariable long id, @RequestBody CreateSupplierDto createSupplierDto) {
+        supplierService.updateSupplier(id, createSupplierDto);
     }
 
     @GetMapping("/{id}")

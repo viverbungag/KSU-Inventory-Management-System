@@ -14,14 +14,14 @@ public class UnitController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Unit createUnit(@RequestBody CreateUnitDto createUnitDto) {
-        return unitService.createUnit(createUnitDto);
+    public void createUnit(@RequestBody CreateUnitDto createUnitDto) {
+        unitService.createUnit(createUnitDto);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Unit updateUnit(@PathVariable long id, @RequestBody CreateUnitDto createUnitDto) {
-        return unitService.updateUnit(id, createUnitDto);
+    public void updateUnit(@PathVariable long id, @RequestBody CreateUnitDto createUnitDto) {
+        unitService.updateUnit(id, createUnitDto);
     }
 
     @GetMapping("/{id}")
