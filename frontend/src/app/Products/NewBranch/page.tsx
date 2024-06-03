@@ -5,7 +5,7 @@ const NewBranch = () => {
    <>
    <Dashboard header="New Branch">
    <div className="flex m-5 p-5">
-              <div className="flex gap-4 bg-red-700 flex-col">
+              <div className="flex gap-4 flex-col">
               <button className="btn btn-wide btn-neutral text-xl">New Product</button>
               <button className="btn btn-wide btn-neutral text-xl">New Branch</button>
               <button className="btn btn-wide btn-neutral text-xl">New Unit</button>

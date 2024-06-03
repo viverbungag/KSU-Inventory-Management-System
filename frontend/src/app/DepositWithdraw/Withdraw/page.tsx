@@ -1,7 +1,5 @@
 import Dashboard from "../../Components/Dashboard/Dashboard"
 import DepositWithdrawLayout from "../DepositWithdrawLayout/DepositWithdrawLayout"
-
-
 export default function Withdraw(){
    
     return(
@@ -9,12 +7,9 @@ export default function Withdraw(){
         
         <Dashboard header="Deposit/Withdraw">
             
-           <DepositWithdrawLayout>
+           
            <div className="flex m-5 p-5">
-              <div className="flex gap-4 bg-red-700 flex-col">
-              <button className="btn btn-wide btn-neutral text-xl">Deposit</button>
-              <button className="btn btn-wide btn-neutral text-xl">Withdraw</button>
-              </div>
+             <DepositWithdrawLayout />
               <div className="mx-4">
                 <form className="flex flex-col">
                    <label className="p-2">Product Name</label>
@@ -32,7 +27,7 @@ export default function Withdraw(){
                 </form>
               </div>
             </div>
-           </DepositWithdrawLayout>
+          
 
              </Dashboard>
         </>
