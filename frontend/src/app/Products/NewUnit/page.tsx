@@ -1,6 +1,6 @@
 import Dashboard from "@/app/Components/Dashboard/Dashboard"
 
-const NewBranch = () => {
+const NewUnit = () => {
   return (
    <>
    <Dashboard header="New Branch">
@@ -27,4 +27,4 @@ const NewBranch = () => {
   )
 }
 
-export default NewBranch
+export default NewUnit
