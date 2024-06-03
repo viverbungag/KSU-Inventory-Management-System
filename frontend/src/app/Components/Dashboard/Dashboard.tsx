@@ -8,7 +8,7 @@ type headerProps = {
 // Layout sa dashboard
 const Dashboard: React.FC<headerProps> = ({ header, children }) => (
  
-    <div>
+    <div className="container-xl m-10">
       <h1>{header}</h1>
     <div className="mt-5 p-5 bg-gray-700 rounded-md">
         <DashboardNavigationSection />

@@ -4,7 +4,7 @@ import DashboardInformationSection from "./Components/Dashboard/DashboardCompone
 export default function Home() {
   return (
   <>
-  <div className="container-xl m-10">
+  <div>
     
     <Dashboard header="Dashboard">
       <DashboardInformationSection />
