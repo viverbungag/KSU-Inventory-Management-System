@@ -1,9 +1,13 @@
 package com.ksu.inventory_management_system_backend.entities.product;
 
+import com.ksu.inventory_management_system_backend.entities.category.Category;
+import com.ksu.inventory_management_system_backend.entities.joins.BranchProduct;
 import com.ksu.inventory_management_system_backend.entities.product.dto.CreateProductDto;
 import com.ksu.inventory_management_system_backend.entities.product.dto.ProductReturnDto;
 import com.ksu.inventory_management_system_backend.entities.product.dto.ProductReturnDtoTempSupplier;
+import com.ksu.inventory_management_system_backend.entities.size.Size;
 import com.ksu.inventory_management_system_backend.entities.supplier.Supplier;
+import com.ksu.inventory_management_system_backend.entities.unit.Unit;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,11 +29,6 @@ public class Product {
     @NonNull
     private String name;
 
-    @Column(name = "quantity")
-    @Setter
-    @NonNull
-    private Float quantity;
-
     @Column(name = "minimum_quantity")
     @Setter
     @NonNull
@@ -41,13 +40,35 @@ public class Product {
     @ToString.Exclude
     private Supplier supplier;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    @Setter
+    @ToString.Exclude
+    private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id")
+    @Setter
+    @ToString.Exclude
+    private Unit unit;
+
+    @Setter
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Collection<Size> sizes;
+
+    @Setter
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @ToString.Exclude
+    Collection<BranchProduct> branchProducts;
+
     public static Product from(CreateProductDto createProductDto) {
-        return new Product(createProductDto.name(), createProductDto.quantity(), createProductDto.minimumQuantity());
+        return new Product(createProductDto.name(), createProductDto.minimumQuantity());
     }
 
     public static ProductReturnDto convertToReturnDto(Product product) {
         ProductReturnDtoTempSupplier supplier = new ProductReturnDtoTempSupplier(product.getSupplier().getName(), product.getSupplier().getContactNumber(), product.getSupplier().getAddress());
-        return new ProductReturnDto(product.getId(),product.getName(), product.getQuantity(), product.getMinimumQuantity(), supplier);
+        return new ProductReturnDto(product.getId(),product.getName(), product.getMinimumQuantity(), supplier);
     }
 
     public static Collection<ProductReturnDto> convertToReturnDto(Collection<Product> products) {

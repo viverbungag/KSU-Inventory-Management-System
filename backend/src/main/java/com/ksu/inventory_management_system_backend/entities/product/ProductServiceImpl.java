@@ -28,7 +28,6 @@ public class ProductServiceImpl implements ProductService{
         if (optionalProduct.isPresent()) {
             Product product = optionalProduct.get();
             product.setName(createProductDto.name());
-            product.setQuantity(createProductDto.quantity());
             product.setMinimumQuantity(createProductDto.minimumQuantity());
             productRepository.save(product);
         } else {

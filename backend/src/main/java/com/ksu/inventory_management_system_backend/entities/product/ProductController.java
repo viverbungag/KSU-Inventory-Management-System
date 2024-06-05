@@ -13,7 +13,7 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class ProductController {
 
-        private final ProductService productService;
+    private final ProductService productService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

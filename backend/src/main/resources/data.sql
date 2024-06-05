@@ -1,35 +1,62 @@
+-- Inserting data into the supplier table
+INSERT INTO supplier (id, name, contact_number, address) VALUES
+(1, 'Meat Supplier', '1234567890', '123 Street, City, Country'),
+(2, 'Vegetable Supplier', '0987654321', '456 Avenue, City, Country'),
+(3, 'Beverage Supplier', '1112223330', '789 Boulevard, City, Country'),
+(4, 'Dairy Supplier', '4445556660', '321 Lane, City, Country');
+
+-- Inserting data into the category table
 INSERT INTO category (id, name) VALUES
-(1000, 'Category 1'),
-(1001, 'Category 2'),
-(1002, 'Category 3'),
-(1003, 'Category 4'),
-(1004, 'Category 5'),
-(1005, 'Category 6');
+(1, 'Steaks'),
+(2, 'Sides'),
+(3, 'Drinks'),
+(4, 'Desserts');
 
-INSERT INTO supplier (id, name) VALUES
-(1000, 'Supplier 1'),
-(1001, 'Supplier 2'),
-(1002, 'Supplier 3'),
-(1003, 'Supplier 4'),
-(1004, 'Supplier 5'),
-(1005, 'Supplier 6');
+-- Inserting data into the unit table
+INSERT INTO unit (id, name) VALUES
+(1, 'Kilogram'),
+(2, 'Piece'),
+(3, 'Liter'),
+(4, 'Gram');
 
-INSERT INTO product (id, name, quantity, minimum_quantity, supplier_id) VALUES
-(2000, 'Product 1', 1, 5, 1000),
-(2001, 'Product 2', 2, 5, 1000),
-(2002, 'Product 3', 3, 5, 1000),
-(2003, 'Product 4', 4, 5, 1001),
-(2004, 'Product 5', 5, 5, 1001),
-(2005, 'Product 6', 6, 5, 1001),
-(2006, 'Product 7', 7, 5, 1002),
-(2007, 'Product 8', 8, 5, 1002),
-(2008, 'Product 9', 9, 5, 1002),
-(2009, 'Product 10', 10, 5, 1003),
-(2010, 'Product 11', 11, 5, 1003),
-(2011, 'Product 12', 12, 5, 1003),
-(2012, 'Product 13', 13, 5, 1004),
-(2013, 'Product 14', 14, 5, 1004),
-(2014, 'Product 15', 15, 5, 1004),
-(2015, 'Product 16', 16, 5, 1005),
-(2016, 'Product 17', 17, 5, 1005),
-(2017, 'Product 18', 18, 5, 1005);
+-- Inserting data into the product table
+INSERT INTO product (id, name, minimum_quantity, supplier_id, category_id, unit_id) VALUES
+(1, 'Ribeye Steak', 10, 1, 1, 2),
+(2, 'French Fries', 20, 2, 2, 1),
+(3, 'Red Wine', 15, 3, 3, 3),
+(4, 'Cheesecake', 25, 4, 4, 2);
+
+-- Inserting data into the size table
+INSERT INTO size (id, name, product_id) VALUES
+(1, 'Small', 2),
+(2, 'Large', 2),
+(3, 'Medium', 1),
+(4, 'Extra Large', 1);
+
+-- Inserting data into the branch table
+INSERT INTO branch (id, name) VALUES
+(1, 'Steakhouse Downtown'),
+(2, 'Steakhouse Uptown'),
+(3, 'Steakhouse Eastside'),
+(4, 'Steakhouse Westside');
+
+-- Inserting data into the branch_product table
+INSERT INTO branch_product (id, quantity, branch_id, product_id) VALUES
+(1, 100, 1, 1),
+(2, 200, 2, 2),
+(3, 150, 3, 3),
+(4, 250, 4, 4);
+
+-- Inserting data into the deposit_transaction table
+INSERT INTO deposit_transaction (id, quantity, date, price, branch_product_id) VALUES
+(1, 50, '2022-01-01', 100.00, 1),
+(2, 100, '2022-01-02', 200.00, 2),
+(3, 75, '2022-01-03', 150.00, 3),
+(4, 125, '2022-01-04', 250.00, 4);
+
+-- Inserting data into the withdraw_transaction table
+INSERT INTO withdraw_transaction (id, quantity, date, price, branch_product_id) VALUES
+(1, 10, '2022-01-03', 20.00, 1),
+(2, 20, '2022-01-04', 40.00, 2),
+(3, 15, '2022-01-05', 30.00, 3),
+(4, 25, '2022-01-06', 50.00, 4);

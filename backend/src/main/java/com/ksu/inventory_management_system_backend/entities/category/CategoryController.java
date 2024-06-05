@@ -3,7 +3,6 @@ package com.ksu.inventory_management_system_backend.entities.category;
 import com.ksu.inventory_management_system_backend.entities.category.dto.CreateCategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

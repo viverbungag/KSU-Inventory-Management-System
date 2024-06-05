@@ -35,6 +35,7 @@ public class Supplier {
 
     @OneToMany(mappedBy = "supplier", fetch = FetchType.LAZY)
     @Setter
+    @ToString.Exclude
     private Collection<Product> products;
 
     public static Supplier from(CreateSupplierDto createSupplierDto) {
